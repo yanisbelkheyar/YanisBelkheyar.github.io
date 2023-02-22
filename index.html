@@ -1,155 +1,78 @@
 <!DOCTYPE html>
-<!-- Template by quackit.com -->
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>personal webpage</title>
-	<style type="text/css">
-
-		/* Layout */
+	<title>My Personal Webpage</title>
+	<style>
 		body {
-			min-width: 630px;
+			background-color: #f2f2f2;
+			font-family: Arial, sans-serif;
 		}
-
-		#container {
-			padding-left: 200px;
-			padding-right: 190px;
+		header {
+			background-color: #006400;
+			color: #fff;
+			padding: 20px;
+			text-align: center;
 		}
-		
-		#container .column {
-			position: relative;
-			float: left;
+		h1 {
+			font-size: 36px;
+			margin-bottom: 0;
 		}
-		
-		#center {
-			padding: 10px 20px;
-			width: 100%;
+		h2 {
+			font-size: 24px;
+			margin-top: 0;
 		}
-		
-		#left {
-			width: 180px;
-			right: 240px;
-			padding: 0 10px;
-			margin-left: -100%;
+		nav {
+			background-color: #8FBC8F;
+			padding: 10px;
 		}
-		
-		#footer {
-			clear: both;
-		}
-		
-		/* IE hack */
-		* html #left {
-			left: 150px;
-		}
-
-		/* Make the columns the same height as each other */
-		#container {
-			overflow: hidden;
-		}
-
-		#container .column {
-			padding-bottom: 1001em;
-			margin-bottom: -1000em;
-		}
-
-		/* Fix for the footer */
-		* html body {
-			overflow: hidden;
-		}
-		
-		* html #footer-wrapper {
-			float: left;
-			position: relative;
-			width: 100%;
-			padding-bottom: 10010px;
-			margin-bottom: -10000px;
-			background: #fff;
-		}
-
-		/* Aesthetics */
-		body {
-			margin: 0;
-			padding: 0;
-			font-family:Sans-serif;
-			line-height: 1.5em;
-		}
-		
-		p {
-			color: #555;
-		}
-
-		nav ul {
-			list-style-type: none;
-			margin: 0;
-			padding: 0;
-		}
-		
-		nav ul a {
-			color: darkgreen;
+		nav a {
+			color: #fff;
 			text-decoration: none;
+			margin: 0 10px;
 		}
-
-		#header, #footer {
-			font-size: large;
-			padding: 0.3em;
-			background: #BCCE98;
+		nav a:hover {
+			text-decoration: underline;
 		}
-
-		#left {
-			background: #DAE9BC;
+		section {
+			padding: 20px;
+			margin: 20px;
+			background-color: #fff;
+			border-radius: 5px;
+			box-shadow: 0px 0px 10px #ccc;
 		}
-		
-		#right {
-			background: #F7FDEB;
+		footer {
+			background-color: #006400;
+			color: #fff;
+			padding: 10px;
+			text-align: center;
 		}
-
-		#center {
-			background: #fff;
-		}
-
-		#container .column {
-			padding-top: 1em;
-		}
-		
 	</style>
-	
-	
 </head>
-
 <body>
-
-	<header id="header"><p>Yanis Belkheyar Webpage</p></header>
-
-	<div id="container">
-
-		<main id="center" class="column">
-			<article>
-			
-				<h1>Work</h1>
-                French PhD student working at Radboud University in Nijmegen, Netherland.
-                Symmetric cryptography: design and analysis of low latency cipher.
-			
-			</article>								
-		</main>
-
-		<nav id="left" class="column">
-			<h3>Link</h3>
-			<ul>
-				<li><a href="#">CV</a></li>
-				<li><a href="#">Liste of paper</a></li>
-                <li><a href="#">Side project</a></li>
-                <li><a href="#">Cooking recipe</a></li>
-			</ul>
-
-		</nav>
-
-
-	</div>
-
-	<div id="footer-wrapper">
-		<footer id="footer"><p>Contact: yanis.belkheyar@ru.nl</p></footer>
-	</div>
-
+	<header>
+		<h1>My Personal Webpage</h1>
+		<h2>My Name</h2>
+	</header>
+	<nav>
+		<a href="#">Home</a>
+		<a href="#">About</a>
+		<a href="#">Research</a>
+		<a href="#">Publications</a>
+		<a href="#">Teaching</a>
+		<a href="#">Contact</a>
+	</nav>
+	<section>
+		<h2>About Me</h2>
+		<p>Insert your bio or introduction here.</p>
+		<h2>Research Interests</h2>
+		<p>Insert your research interests here.</p>
+		<h2>Publications</h2>
+		<p>Insert a list of your publications here.</p>
+		<h2>Teaching</h2>
+		<p>Insert information about your teaching experience and courses taught here.</p>
+	</section>
+	<footer>
+		<p>Copyright © 2023 My Personal Webpage</p>
+	</footer>
 </body>
-
 </html>
