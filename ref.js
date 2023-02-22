@@ -13,5 +13,5 @@ bibtex.content = bibtexData;
 
 var html = bibtex.toHTML();
 
-var references = document.getElementById("references");
+var references = document.getElementById("ref");
 references.innerHTML = html;
