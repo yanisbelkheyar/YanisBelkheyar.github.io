@@ -10,27 +10,97 @@
 
   <button class="menu-toggle" onclick="toggleMenu()">☰</button>
 
+  <!-- Language button -->
+  <button class="lang-toggle" onclick="toggleLang()">EN</button>
+
   <nav id="sidebar">
-    <h2>Mon Site</h2>
+    <h2 id="title">Mon Site</h2>
     <ul>
-      <li><a href="index.html">🏠 Accueil</a></li>
-      <li><a href="page1.html">📄 Page 1</a></li>
-      <li><a href="page2.html">⚙️ Page 2</a></li>
+      <li><a id="link-home" href="index.html" class="active">🏠 Accueil</a></li>
+      <li><a id="link-p1" href="page1.html">📄 Page 1</a></li>
+      <li><a id="link-p2" href="page2.html">⚙️ Page 2</a></li>
     </ul>
   </nav>
 
   <main>
-    <h1>Bienvenue</h1>
-    <p>Interface moderne avec menu animé et mode sombre automatique.</p>
+    <h1 id="main-title">Bienvenue</h1>
+    <p id="main-text">Interface moderne avec menu animé et mode sombre automatique.</p>
   </main>
 
   <script>
-    function toggleMenu() {
-      document.getElementById("sidebar").classList.toggle("open");
+  function toggleMenu() {
+    document.getElementById("sidebar").classList.toggle("open");
+  }
+
+  // --- Language system with persistence + auto-detect ---
+  const supportedLangs = ["fr", "en"];
+
+  function detectBrowserLang() {
+    const lang = navigator.language.slice(0,2);
+    return supportedLangs.includes(lang) ? lang : "fr";
+  }
+
+  function applyLang(lang) {
+    const btn = document.querySelector(".lang-toggle");
+
+    if (lang === "en") {
+      btn.innerText = "FR";
+
+      document.getElementById("title").innerText = "My Site";
+      document.getElementById("main-title").innerText = "Welcome";
+      document.getElementById("main-text").innerText = "Modern interface with animated menu and auto dark mode.";
+
+      document.getElementById("link-home").innerText = "🏠 Home";
+      document.getElementById("link-home").href = "index-en.html";
+
+      document.getElementById("link-p1").innerText = "📄 Page 1";
+      document.getElementById("link-p1").href = "page1-en.html";
+
+      document.getElementById("link-p2").innerText = "⚙️ Page 2";
+      document.getElementById("link-p2").href = "page2-en.html";
+
+    } else {
+      btn.innerText = "EN";
+
+      document.getElementById("title").innerText = "Mon Site";
+      document.getElementById("main-title").innerText = "Bienvenue";
+      document.getElementById("main-text").innerText = "Interface moderne avec menu animé et mode sombre automatique.";
+
+      document.getElementById("link-home").innerText = "🏠 Accueil";
+      document.getElementById("link-home").href = "index.html";
+
+      document.getElementById("link-p1").innerText = "📄 Page 1";
+      document.getElementById("link-p1").href = "page1.html";
+
+      document.getElementById("link-p2").innerText = "⚙️ Page 2";
+      document.getElementById("link-p2").href = "page2.html";
     }
-  </script>
+
+    localStorage.setItem("lang", lang);
+  }
+
+  function toggleLang() {
+    const current = localStorage.getItem("lang") || "fr";
+    const newLang = current === "fr" ? "en" : "fr";
+
+    if (!localStorage.getItem("lang")) {
+      const lang = detectBrowserLang();
+      if (lang === "en" && !window.location.pathname.includes("-en")) {
+        window.location.href = "index-en.html";
+      }
+    }
+    applyLang(newLang);
+  }
+
+  // Init on load
+  (function initLang(){
+    let saved = localStorage.getItem("lang");
+    if (!saved) {
+      saved = detectBrowserLang();
+    }
+    applyLang(saved);
+  })();
+</script>
 
 </body>
 </html>
-
-
