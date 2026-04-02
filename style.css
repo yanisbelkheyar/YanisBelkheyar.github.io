@@ -1,68 +1,109 @@
 :root {
-  --green: #2ecc71;
-  --green-dark: #27ae60;
-  --orange: #f39c12;
-  --orange-dark: #e67e22;
-  --bg: #f5f7fa;
-  --text: #2c3e50;
+  --bg: #121212;
+  --sidebar: #181818;
+  --card: #1f1f1f;
+  --text: #eaeaea;
+  --muted: #aaaaaa;
+
+  --green: #1f8f5f;
+  --green-light: #27ae60;
+  --orange: #d35400;
+  --orange-light: #e67e22;
 }
 
-/* Reset léger */
+/* Mode clair auto */
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f4f6f8;
+    --sidebar: #2c3e50;
+    --card: #ffffff;
+    --text: #2c3e50;
+    --muted: #666;
+  }
+}
+
+/* Base */
 body {
   margin: 0;
-  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  font-family: "Segoe UI", Roboto, sans-serif;
   display: flex;
-  min-height: 100vh;
-  background-color: var(--bg);
+  background: var(--bg);
   color: var(--text);
 }
 
-/* ===== MENU MODERNE ===== */
-nav {
-  background: linear-gradient(180deg, var(--green), var(--green-dark));
+/* ===== BOUTON MENU (mobile) ===== */
+.menu-toggle {
+  display: none;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  background: var(--green);
   color: white;
-  width: 240px;
+  border: none;
+  padding: 10px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: 0.3s;
+}
+
+.menu-toggle:hover {
+  background: var(--green-light);
+}
+
+/* ===== SIDEBAR ===== */
+nav {
+  width: 260px;
+  height: 100vh;
+  background: var(--sidebar);
   padding: 25px 20px;
-  box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+  box-shadow: 4px 0 20px rgba(0,0,0,0.4);
+
+  transform: translateX(0);
+  transition: transform 0.3s ease;
 }
 
 nav h2 {
   margin-top: 0;
-  margin-bottom: 30px;
+  color: var(--green-light);
   font-size: 20px;
-  letter-spacing: 1px;
 }
 
 /* Liste */
 nav ul {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin-top: 30px;
 }
 
 nav ul li {
   margin-bottom: 10px;
 }
 
-/* Liens */
+/* Liens style dashboard */
 nav ul li a {
-  display: block;
-  padding: 10px 15px;
-  border-radius: 8px;
-  color: white;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 12px 15px;
+  border-radius: 10px;
+
+  color: var(--text);
   text-decoration: none;
+
   transition: all 0.25s ease;
 }
 
-/* Hover moderne */
+/* Hover fluide */
 nav ul li a:hover {
-  background-color: rgba(255, 255, 255, 0.15);
-  transform: translateX(5px);
+  background: rgba(255,255,255,0.08);
+  transform: translateX(6px);
 }
 
-/* Lien actif (tu peux ajouter class="active" dans HTML) */
+/* Actif */
 nav ul li a.active {
-  background-color: var(--orange);
+  background: var(--orange);
   color: white;
 }
 
@@ -72,50 +113,33 @@ main {
   padding: 40px;
 }
 
-/* Titre */
 main h1 {
   margin-top: 0;
-  color: var(--green-dark);
+  color: var(--green-light);
 }
 
-/* Bouton exemple (optionnel) */
-.button {
-  display: inline-block;
-  background-color: var(--orange);
-  color: white;
-  padding: 10px 15px;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: background 0.3s;
+/* Carte moderne (optionnel) */
+.card {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
 }
 
-.button:hover {
-  background-color: var(--orange-dark);
-}
-
-/* ===== RESPONSIVE ===== */
+/* ===== ANIMATION MOBILE ===== */
 @media (max-width: 768px) {
-  body {
-    flex-direction: column;
+  .menu-toggle {
+    display: block;
   }
 
   nav {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
   }
 
-  nav ul {
-    display: flex;
-    gap: 10px;
-  }
-
-  nav ul li {
-    margin: 0;
-  }
-
-  nav ul li a {
-    padding: 8px 10px;
+  nav.open {
+    transform: translateX(0);
   }
 }

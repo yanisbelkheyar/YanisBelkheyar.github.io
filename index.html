@@ -3,24 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mon site GitHub Pages version 2</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Mon site GitHub Pages</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <nav>
-    <h2>Menu</h2>
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+  <nav id="sidebar">
+    <h2>Mon Site</h2>
     <ul>
-      <li><a href="index.html">Accueil version 2</a></li>
-      <li><a href="page1.html">Page 1</a></li>
-      <li><a href="page2.html">Page 2</a></li>
+      <li><a href="index.html" class="active">🏠 Accueil</a></li>
+      <li><a href="page1.html">📄 Page 1</a></li>
+      <li><a href="page2.html">⚙️ Page 2</a></li>
     </ul>
   </nav>
 
   <main>
     <h1>Bienvenue</h1>
-    <p>Ceci est une page simple pour GitHub Pages. version 2</p>
+    <p>Interface moderne avec menu animé et mode sombre automatique.</p>
   </main>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("sidebar").classList.toggle("open");
+    }
+  </script>
 
 </body>
 </html>
+
+
