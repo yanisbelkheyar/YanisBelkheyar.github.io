@@ -64,9 +64,7 @@ nav {
 }
 
 nav h2 {
-  margin-top: 0;
   color: var(--green-light);
-  font-size: 20px;
 }
 
 /* Liste */
@@ -89,7 +87,7 @@ nav ul li a {
   padding: 12px 15px;
   border-radius: 10px;
 
-  color: var(--text);
+  color: var(--green-light); /* toujours vert lisible */
   text-decoration: none;
 
   transition: all 0.25s ease;
@@ -97,7 +95,8 @@ nav ul li a {
 
 /* Hover fluide */
 nav ul li a:hover {
-  background: rgba(255,255,255,0.08);
+  background: rgba(39, 174, 96, 0.15);
+  color: var(--green-light);
   transform: translateX(6px);
 }
 
