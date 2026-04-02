@@ -3,15 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mon site GitHub Pages</title>
+  <title>Recettes</title>
   <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
 
-    <button class="lang-toggle" onclick="toggleLang()">EN</button>
+  <!-- Bouton menu mobile -->
   <button class="menu-toggle" onclick="toggleMenu()">☰</button>
 
+  <!-- Bouton langue -->
+  <button class="lang-toggle" onclick="toggleLang()">EN</button>
+
+  <!-- Sidebar -->
   <nav id="sidebar">
     <h2 id="title">Mon Site</h2>
     <ul>
@@ -22,12 +25,22 @@
   </nav>
 
   <main>
-    <h1 id="main-title">Bienvenue</h1>
-    <p id="main-text">Interface moderne avec menu animé et mode sombre automatique.</p>
+    <h1 id="main-title">Liste de recettes</h1>
+
+    <div class="card">
+      <ul id="recipe-list">
+        <li>🍝 Pâtes carbonara</li>
+        <li>🍗 Poulet rôti</li>
+        <li>🥗 Salade César</li>
+        <li>🍰 Tarte aux pommes</li>
+        <li>🍛 Curry de légumes</li>
+      </ul>
+    </div>
   </main>
 
-<script src="menu.js"></script>
-<script src="lang.js"></script>
+  <!-- Scripts séparés -->
+  <script src="menu.js"></script>
+  <script src="lang.js"></script>
 
 </body>
 </html>

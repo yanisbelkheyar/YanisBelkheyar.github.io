@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mon site GitHub Pages</title>
+  <link rel="stylesheet" href="style.css">
+    <!-- Language button -->
+  <button class="lang-toggle" onclick="toggleLang()">EN</button>
+
+</head>
+<body>
+
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+  <nav id="sidebar">
+    <h2 id="title">Mon Site</h2>
+    <ul>
+      <li><a id="link-home" href="index.html" class="active">🏠 Accueil</a></li>
+      <li><a id="link-p1" href="page1.html">📄 Recipes</a></li>
+      <li><a id="link-p2" href="page2.html">⚙️ Page 2</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1 id="main-title">Recipes</h1>
+    <p id="main-text">Liste recipes.</p>
+    <div class="card">
+      <ul id="recipe-list">
+        <li>🍝 Pasta carbonara</li>
+        <li>🍗 Roast chicken</li>
+        <li>🥗 Caesar salad</li>
+        <li>🍰 Apple pie</li>
+        <li>🍛 Vegetable curry</li>
+      </ul>
+  </main>
+
+  <script src="menu.js"></script>
+<script src="lang.js"></script>
+
+</body>
+</html>
