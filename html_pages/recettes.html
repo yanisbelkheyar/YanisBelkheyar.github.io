@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recettes</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <div id="sidebar-container"></div>
+<main>
+  <h1 id="main-title">Mes Recettes</h1>
+
+  <div class="split-view">
+    
+    <aside class="recipe-selection">
+      <nav class="card">
+        <ul id="recipe-list">
+          <li><button id="link-compote">🍎 Compote de pomme</button></li>
+          <li><button id="link-bananabread">🍌 Banana Bread</button></li>
+          <li><button id="link-pain">🥖 Pain</button></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <section id="recettes-content">
+      <div class="empty-state">
+        <p>Cliquez sur une recette à gauche pour l'afficher ici.</p>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+  <!-- Scripts séparés -->
+  <script src="../js/sidebar.js"></script>
+  <script src="../js/recettes.js"></script>
+
+</body>
+</html>

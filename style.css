@@ -164,3 +164,151 @@ main h1 {
 .lang-toggle:hover {
   background: var(--orange-light);
 }
+
+
+/* ===== PUBLICATIONS ===== */
+
+#bibtex_display {
+  margin-top: 20px;
+}
+
+/* Carte publication */
+.bibtexentry {
+  background: var(--card);
+  border-left: 4px solid var(--green-light);
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transition: 0.25s;
+}
+
+/* Hover léger */
+.bibtexentry:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+/* Titre */
+.bibtexentry .title {
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--green-light);
+  margin-bottom: 5px;
+}
+
+/* Auteurs */
+.bibtexentry .author {
+  font-size: 14px;
+  color: var(--text);
+  margin-bottom: 5px;
+}
+
+/* Journal / conférence */
+.bibtexentry .journal,
+.bibtexentry .booktitle {
+  font-size: 13px;
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* Année */
+.bibtexentry .year {
+  float: right;
+  font-weight: bold;
+  color: var(--orange);
+}
+
+/* Liens (DOI, PDF) */
+.bibtexentry a {
+  color: var(--orange-light);
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.bibtexentry a:hover {
+  text-decoration: underline;
+  color: var(--orange)
+}
+
+.bibtexentry {
+  position: relative;
+}
+
+.bibtexentry::before {
+  content: attr(data-volume);
+  position: absolute;
+  top: -10px;
+  right: 10px;
+  background: var(--orange);
+  color: white;
+  padding: 3px 8px;
+  font-size: 12px;
+  border-radius: 6px;
+}
+
+
+/* ===== Recettes ===== */
+
+
+
+/* Le conteneur principal */
+.split-view {
+  display: flex;       /* Aligne les enfants horizontalement */
+  gap: 20px;           /* Espace entre la liste et le contenu */
+  align-items: flex-start; 
+  margin-top: 20px;
+}
+
+/* La colonne de gauche (la liste) */
+.recipe-selection {
+  width: 300px;        /* Largeur fixe pour que la liste ne bouge pas */
+  flex-shrink: 0;      /* Empêche la colonne de s'écraser */
+}
+
+/* La zone de droite (le contenu chargé par JS) */
+#recettes-content {
+  flex-grow: 1;        /* Prend tout l'espace restant à droite */
+  background: var(--card);
+  padding: 25px;
+  border-radius: 12px;
+  min-height: 400px;   /* Pour que la zone soit visible même vide */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* On stylise les boutons pour qu'ils ressemblent à des liens de menu */
+#recipe-list {
+  list-style: none;
+  padding: 0;
+}
+
+#recipe-list li {
+  margin-bottom: 8px;
+}
+
+#recipe-list button {
+  width: 100%;
+  text-align: left;
+  padding: 12px 15px;
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--text);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+  font-size: 1rem;
+}
+
+#recipe-list button:hover {
+  background: rgba(31, 143, 95, 0.1);
+  color: var(--green-light);
+}
+
+/* Style quand une recette est chargée */
+.recettes h1 {
+  color: var(--orange);
+  margin-top: 0;
+  border-bottom: 2px solid var(--green);
+  padding-bottom: 10px;
+}
